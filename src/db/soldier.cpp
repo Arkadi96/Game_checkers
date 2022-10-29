@@ -30,14 +30,14 @@ set_pos(position p)
     m_pos = p;
 }
 
-const bool
+bool
 checkers::db::soldier::
 is_alive()
 {
     return m_alive;
 }
 
-const string
+string
 checkers::db::soldier::
 get_type()
 {
@@ -58,3 +58,10 @@ get_pos()
     return m_type;
 }
 
+checkers::db::soldier::
+soldier(string s, position p)
+{
+    set_type(s);
+    set_valid(true);
+    set_pos(p);
+}

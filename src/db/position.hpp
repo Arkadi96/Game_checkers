@@ -17,10 +17,11 @@ class checkers::db::position {
     public:
         void set_x(int);
         void set_y(int);
-        const int get_y();
-        const int get_x();
+        int get_y();
+        int get_x();
     public:
         position();
+        position(int, int);
         ~position() = default;
         position(const position&);
         position& operator=(const position&);

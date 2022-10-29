@@ -21,14 +21,14 @@ set_y(int y)
     m_y = y;
 }
 
-const int
+int
 checkers::db::position::
 get_x()
 {
     return m_x;
 }
 
-const int
+int
 checkers::db::position::
 get_y()
 {
@@ -40,6 +40,15 @@ position()
     : m_x{0}
     , m_y{0}
 {
+}
+
+checkers::db::position::
+position(int x, int y)
+{
+    assert(BOARD_WIDTH > y && 0 <= y);
+    assert(BOARD_WIDTH > x && 0 <= x);
+    m_y = y;
+    m_x = x;
 }
 
 checkers::db::position::
@@ -75,7 +84,4 @@ operator==(const position& p)
     }
     return false;
 }
-
-
-
 

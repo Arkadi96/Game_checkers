@@ -27,10 +27,11 @@ class checkers::db::checkers_data {
         void clear_db();
     public:
         const soldiers& get_white_soldiers();
-        const soldiers& get_white_soldiers();
+        const soldiers& get_black_soldiers();
         void kill_soldier(soldier&);
         void move_soldier(soldier&, position);
-        void change_type(soldiers& string);
+        void change_type(soldiers&);
+        void print_db(); // temporary
 
     public:
         static checkers_data& get():
