@@ -72,39 +72,46 @@ void
 checkers::db::checkers_data::
 kill_soldier(soldier& s)
 {
+    (void)s;
+    std::cout << "kill soldier\n";
 }
 
 void
 checkers::db::checkers_data::
 move_soldier(soldier& s, position p)
 {
+    (void)s;
+    (void)p;
+    std::cout << "move soldier\n";
 }
 
 void
 checkers::db::checkers_data::
-change_type(soldier& s, position p)
+change_type(soldier& s)
 {
+    (void)s;
+    std::cout << "change type\n";
 }
 
 void
 checkers::db::checkers_data::
-change_type(soldier& s, position p)
+print_db()
 {
     std::cout << "White soldiers" << std::endl;
     for (auto w : m_white_soldiers)
-        std::cout << " " << w.get_pos().get_x()
-            << "," << w.get_pos().get_y();
+        std::cout << " " << w->get_pos().get_x()
+            << "," << w->get_pos().get_y();
 
     std::cout << "Black soldiers" << std::endl;
     for (auto w : m_black_soldiers)
-        std::cout << " " << w.get_pos().get_x()
-            << "," << w.get_pos().get_y();
+        std::cout << " " << w->get_pos().get_x()
+            << "," << w->get_pos().get_y();
 }
 
 checkers::db::checkers_data::
 checkers_data()
-    : m_white_soldiers{0}
-    , m_black_soldiers{0}
+    : m_white_soldiers()
+    , m_black_soldiers()
 {
     set_db();
 }

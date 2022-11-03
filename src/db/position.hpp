@@ -1,5 +1,5 @@
-#ifndef POSITION_HPP
-#define POSITION_HPP
+#ifndef SRC_DB_POSITION_HPP
+#define SRC_DB_POSITION_HPP
 
 #define BOARD_WIDTH 8
 

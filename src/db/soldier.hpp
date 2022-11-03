@@ -1,5 +1,5 @@
-#ifndef SOLDIER_HPP
-#define SOLDIER_HPP
+#ifndef SRC_DB_SOLDIER_HPP
+#define SRC_DB_SOLDIER_HPP
 
 // Headers from this project
 #include "position.hpp"
@@ -26,10 +26,10 @@ class checkers::db::soldier {
         void set_pos(position);
         bool is_alive();
         string get_type();
-        const position& get_pos();
+        position& get_pos();
 
     public:
-        soldier() = delete;
+        soldier();
         ~soldier() = default;
         soldier(string, position);
         soldier(const soldier&) = delete;

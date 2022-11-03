@@ -1,5 +1,5 @@
-#ifndef CHECKERS_DATA_HPP
-#define CHECKERS_DATA_HPP
+#ifndef SRC_DB_CHECKERS_DATA_HPP
+#define SRC_DB_CHECKERS_DATA_HPP
 
 // Headers from this project
 #include "soldier.hpp"
@@ -30,11 +30,11 @@ class checkers::db::checkers_data {
         const soldiers& get_black_soldiers();
         void kill_soldier(soldier&);
         void move_soldier(soldier&, position);
-        void change_type(soldiers&);
+        void change_type(soldier&);
         void print_db(); // temporary
 
     public:
-        static checkers_data& get():
+        static checkers_data& get();
     private:
         checkers_data();
         ~checkers_data();

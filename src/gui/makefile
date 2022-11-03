@@ -1,16 +1,16 @@
 # The source files under the project.
 cpp_files := \
-	main_window.cpp \
+#	main_window.cpp \
 
 # The header files under the project, which are supposed to be used by other
 # projects.
 public_headers := \
-	main_window.hpp \
+#	main_window.hpp \
 
 # Building QT project.
 # TODO: Add detailed comments.
 qt_headers := \
-	main_window.hpp \
+#	main_window.hpp \
 
 moc_flags :=
 

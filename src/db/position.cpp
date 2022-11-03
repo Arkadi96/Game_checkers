@@ -37,8 +37,8 @@ get_y()
 
 checkers::db::position::
 position()
-    : m_x{0}
-    , m_y{0}
+    : m_x(0)
+    , m_y(0)
 {
 }
 
@@ -51,10 +51,11 @@ position(int x, int y)
     m_x = x;
 }
 
-checkers::db::position::
+/*checkers::db::position::
 ~position()
 {
 }
+*/
 
 checkers::db::position::
 position(const position& p)

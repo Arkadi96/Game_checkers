@@ -26,7 +26,7 @@ void
 checkers::db::soldier::
 set_pos(position p)
 {
-    assert(m_pos != p);
+    //assert(m_pos != p);
     m_pos = p;
 }
 
@@ -37,25 +37,26 @@ is_alive()
     return m_alive;
 }
 
-string
+std::string
 checkers::db::soldier::
 get_type()
 {
     return m_type;
 }
 
-const position&
+checkers::db::position&
 checkers::db::soldier::
 get_pos()
 {
-    return m_type;
+    return m_pos;
 }
 
-const position&
 checkers::db::soldier::
-get_pos()
+soldier()
+    : m_alive(false)
+    , m_type("")
+    , m_pos()
 {
-    return m_type;
 }
 
 checkers::db::soldier::
