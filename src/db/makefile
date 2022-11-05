@@ -1,8 +1,12 @@
 cpp_files := \
-	checkers_data.cpp \
+    checkers_data.cpp \
+    position.cpp \
+    soldier.cpp \
 
 public_headers := \
-	checkers_data.hpp \
+    checkers_data.hpp \
+    position.hpp \
+    soldier.hpp \
 
 qt_headers :=
 

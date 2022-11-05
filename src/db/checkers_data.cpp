@@ -21,24 +21,32 @@ set_db()
     int i, j;
 
     for (i = 0; i < 3; ++i) {
-        for (j = 0; j < 7; ++j) {
+        for (j = 0; j < 8; ++j) {
             if (en) {
                 position p = position(j, i);
                 m_white_soldiers.push_back(new soldier("soldier", p));
             }
-            en = !en;
+            if (j == 7) {
+                en = en;
+            } else {
+                en = !en;
+            }
         }
     }
 
     en = false;
 
     for (i = 5; i < 8; ++i) {
-        for (j = 0; j < 7; ++j) {
+        for (j = 0; j < 8; ++j) {
             if (en) {
                 position p = position(j, i);
                 m_black_soldiers.push_back(new soldier("soldier", p));
             }
-            en = !en;
+            if (j == 7) {
+                en = en;
+            } else {
+                en = !en;
+            }
         }
     }
 }
@@ -101,11 +109,13 @@ print_db()
     for (auto w : m_white_soldiers)
         std::cout << " " << w->get_pos().get_x()
             << "," << w->get_pos().get_y();
+    std::cout << std::endl;
 
     std::cout << "Black soldiers" << std::endl;
     for (auto w : m_black_soldiers)
         std::cout << " " << w->get_pos().get_x()
             << "," << w->get_pos().get_y();
+    std::cout << std::endl;
 }
 
 checkers::db::checkers_data::

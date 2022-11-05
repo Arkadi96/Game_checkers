@@ -15,10 +15,10 @@ set_valid(bool v)
 
 void
 checkers::db::soldier::
-set_type(string s)
+set_type(const string& s)
 {
     assert(m_type != s);
-    assert(s == "solider" || s == "queen");
+    assert(s == string("soldier") || s == string("qween"));
     m_type = s;
 }
 
