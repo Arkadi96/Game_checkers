@@ -24,9 +24,9 @@ set_type(const string& s)
 
 void
 checkers::db::soldier::
-set_pos(position p)
+set_pos(const position& p)
 {
-    //assert(m_pos != p);
+    assert(m_pos != p);
     m_pos = p;
 }
 

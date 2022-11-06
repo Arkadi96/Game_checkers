@@ -26,6 +26,7 @@ class checkers::db::position {
         position(const position&);
         position& operator=(const position&);
         bool operator==(const position&);
+        bool operator!=(const position&);
 };
 
 #endif

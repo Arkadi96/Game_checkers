@@ -23,7 +23,7 @@ class checkers::db::soldier {
     public:
         void set_valid(bool);
         void set_type(const string&);
-        void set_pos(position);
+        void set_pos(const position&);
         bool is_alive();
         string get_type();
         position& get_pos();

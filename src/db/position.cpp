@@ -51,12 +51,6 @@ position(int x, int y)
     m_x = x;
 }
 
-/*checkers::db::position::
-~position()
-{
-}
-*/
-
 checkers::db::position::
 position(const position& p)
 {
@@ -86,3 +80,13 @@ operator==(const position& p)
     return false;
 }
 
+bool
+checkers::db::position::
+operator!=(const position& p)
+{
+    assert(this != &p);
+    if (m_x != p.m_x || m_y != p.m_y) {
+        return true;
+    }
+    return false;
+}
