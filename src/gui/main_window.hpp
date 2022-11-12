@@ -45,7 +45,7 @@ class checkers::gui::main_window : public QMainWindow {
 //      QLineEdit* m_game_title = nullptr;
     public:
         main_window();
-        ~main_window() = default;
+        ~main_window();
 };
 
 #endif

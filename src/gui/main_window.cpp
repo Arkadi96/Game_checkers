@@ -19,8 +19,9 @@ checkers::gui::main_window::
 connect_to_db()
 {
     db::checkers_data& db = db::checkers_data::get();
-    connect(this, &main_window::start_game_is_selected,
-            &db, &db::checkers_data::print_db); // TODO
+    (void)db;
+    //connect(this, &main_window::start_game_is_selected,
+    //        &db, &db::checkers_data::print_db); // TODO
 }
 
 QVBoxLayout*
@@ -36,7 +37,8 @@ create_menu_layout()
 
 checkers::gui::main_window::
 main_window()
-    : QMainWindow() {
+    : QMainWindow()
+{
     setWindowTitle("checkes game");
     setFixedSize(300,300);
     QVBoxLayout* hl_menu = create_menu_layout();
@@ -46,4 +48,9 @@ main_window()
     setCentralWidget(cw);
     cw->setLayout(hl_menu);
     connect_to_db(); // TODO later need to connect to a manager
+}
+
+checkers::gui::main_window::
+~main_window()
+{
 }

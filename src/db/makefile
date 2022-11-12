@@ -26,7 +26,4 @@ libs := \
 	#Qt5Gui \
 	#Qt5Core \
 
-lib_version :=
-
-
 include $(mkf_path)/lib.mk

@@ -53,6 +53,7 @@ linker_flags += -lstdc++
 libs := \
 	db \
 	Qt5Core \
+
 # Library version
 #
 # Note: If the library version is not specified, then the program_version is

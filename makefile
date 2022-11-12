@@ -20,8 +20,8 @@ prefix := $(HOME)
 #
 projects := \
 	src/db \
+	src/gui \
 	src/main \
-    src/gui \
 #	src/controller \
 # Prerequisite tools
 preconditions := gcc doxygen ar ln pkg-config lcov
@@ -76,6 +76,6 @@ include $(mkf_path)/doc.mk
 # Dependencies between projects
 #
 src/main: src/gui
-src/gui : src/db
+src/gui: src/db
 #src/controller: src/db
 
