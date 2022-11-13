@@ -2,26 +2,26 @@
 #include "main_window.hpp"
 
 // Headers from other projects
-#include "../db/checkers_data.hpp"
+#include "../controller/manager.hpp"
 
 // Headers from standard libraries
 #include <iostream>
 
 void
 checkers::gui::main_window::
-create_game_canvas()
+start_game()
 {
-    std::cout<<"creating game canvas .../n";
+    // creating game window and so on
+    emit start_game_is_pressed();
 }
 
 void
 checkers::gui::main_window::
-connect_to_db()
+connect_to_manager()
 {
-    db::checkers_data& db = db::checkers_data::get();
-    (void)db;
-    //connect(this, &main_window::start_game_is_selected,
-    //        &db, &db::checkers_data::print_db); // TODO
+    controller::manager& m = controller::manager::get();
+    connect(this, &main_window::start_game_is_pressed,
+            &m, &controller::manager::start);
 }
 
 QVBoxLayout*
@@ -31,7 +31,7 @@ create_menu_layout()
     QPushButton* start_game_btn = new QPushButton("Start");
     QVBoxLayout* menu_lyt = new QVBoxLayout();
     menu_lyt->addWidget(start_game_btn);
-    connect(start_game_btn, &QPushButton::clicked, this, &main_window::create_game_canvas);
+    connect(start_game_btn, &QPushButton::clicked, this, &main_window::start_game);
     return menu_lyt;
 }
 
@@ -42,12 +42,10 @@ main_window()
     setWindowTitle("checkes game");
     setFixedSize(300,300);
     QVBoxLayout* hl_menu = create_menu_layout();
-   // QVBoxLayout* vlayout = new QVBoxLayout();
-   // vlayout->addLayout(hl_menu);
     QWidget* cw = new QWidget(this);
     setCentralWidget(cw);
     cw->setLayout(hl_menu);
-    connect_to_db(); // TODO later need to connect to a manager
+    connect_to_manager();
 }
 
 checkers::gui::main_window::

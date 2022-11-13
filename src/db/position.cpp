@@ -23,14 +23,14 @@ set_y(int y)
 
 int
 checkers::db::position::
-get_x()
+get_x() const
 {
     return m_x;
 }
 
 int
 checkers::db::position::
-get_y()
+get_y() const
 {
     return m_y;
 }
@@ -40,11 +40,13 @@ position()
     : m_x(0)
     , m_y(0)
 {
+//    std::cout << "DEBUG: default constructor poistion\n";
 }
 
 checkers::db::position::
 position(int x, int y)
 {
+//    std::cout << "DEBUG: parameterized constructor poistion\n";
     assert(BOARD_WIDTH > y && 0 <= y);
     assert(BOARD_WIDTH > x && 0 <= x);
     m_y = y;
@@ -54,9 +56,11 @@ position(int x, int y)
 checkers::db::position::
 position(const position& p)
 {
+    std::cout << "DEBUG: P: p_x:" << p.get_x()
+            << " p_y:" << p.get_y() << std::endl;
     assert(this != &p);
-    m_x = p.m_x;
-    m_y = p.m_y;
+    m_x = p.get_x();
+    m_y = p.get_y();
 }
 
 checkers::db::position&

@@ -123,7 +123,9 @@ checkers_data()
     : m_white_soldiers()
     , m_black_soldiers()
 {
+    //std::cout << "DEBUG: default constructor checkers_data\n";
     set_db();
+    print_db();
 }
 
 checkers::db::checkers_data::

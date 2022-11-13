@@ -31,7 +31,7 @@ class checkers::db::checkers_data {
         void kill_soldier(soldier&);
         void move_soldier(soldier&, position);
         void change_type(soldier&);
-        void print_db(); // temporary
+        void print_db();
 
     public:
         static checkers_data& get();

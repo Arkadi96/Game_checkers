@@ -1,6 +1,6 @@
 # The source files under the project.
 cpp_files := \
-	manager.cpp\
+	manager.cpp \
 
 # The header files under the project, which are supposed to be used by other
 # projects.

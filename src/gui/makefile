@@ -49,10 +49,11 @@ linker_flags += -lstdc++
 #
 # Note: Specifying the library version is not supported.
 #
-libs := db \
+libs := \
+	controller \
 	Qt5Widgets \
-	Qt5Gui \
 	Qt5Core \
+	Qt5Gui \
 	Qt5PrintSupport \
 
 # Library version

@@ -25,13 +25,13 @@ class checkers::db::soldier {
         void set_type(const string&);
         void set_pos(const position&);
         bool is_alive();
-        string get_type();
+        string get_type() const;
         position& get_pos();
 
     public:
         soldier();
         ~soldier() = default;
-        soldier(string, position);
+        soldier(const string, const position&);
         soldier(const soldier&) = delete;
         soldier& operator=(const soldier&);
         soldier& operator==(const soldier&);

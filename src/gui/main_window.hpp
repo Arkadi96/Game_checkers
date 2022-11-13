@@ -11,16 +11,11 @@
 #include <QFileDialog>
 #include <QGroupBox>
 #include <QHBoxLayout>
-//#include <QLabel>
 #include <QLineEdit>
 #include <QMainWindow>
 #include <QPushButton>
-//#include <QScrollArea>
-//#include <QString>
-//#include <QStringList>
 #include <QVBoxLayout>
 #include <QWidget>
-//#include <QCloseEvent>
 
 
 namespace checkers {
@@ -33,16 +28,15 @@ class checkers::gui::main_window : public QMainWindow {
     Q_OBJECT
 
     public slots:
-        void create_game_canvas();
+        void start_game();
 
     signals:
-        void start_game_is_selected();
+        void start_game_is_pressed();
 
     private:
-        void connect_to_db();
+        void connect_to_manager();
         QVBoxLayout* create_menu_layout();
-//      QPushButton* m_start nullptr;
-//      QLineEdit* m_game_title = nullptr;
+
     public:
         main_window();
         ~main_window();

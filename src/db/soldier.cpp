@@ -9,7 +9,6 @@ void
 checkers::db::soldier::
 set_valid(bool v)
 {
-    assert(m_alive != v);
     m_alive = v;
 }
 
@@ -17,7 +16,6 @@ void
 checkers::db::soldier::
 set_type(const string& s)
 {
-    assert(m_type != s);
     assert(s == string("soldier") || s == string("qween"));
     m_type = s;
 }
@@ -26,7 +24,8 @@ void
 checkers::db::soldier::
 set_pos(const position& p)
 {
-    assert(m_pos != p);
+    //std::cout << "DEBUG: S: p_x:" << p.get_x()
+    //        << " p_y:" << p.get_y() << std::endl;
     m_pos = p;
 }
 
@@ -39,7 +38,7 @@ is_alive()
 
 std::string
 checkers::db::soldier::
-get_type()
+get_type() const
 {
     return m_type;
 }
@@ -57,11 +56,13 @@ soldier()
     , m_type("")
     , m_pos()
 {
+    //std::cout << "DEBUG: default constructor soldier\n";
 }
 
 checkers::db::soldier::
-soldier(string s, position p)
+soldier(const string s, const position& p)
 {
+   //std::cout << "DEBUG: parameterized constructor soldier\n";
     set_type(s);
     set_valid(true);
     set_pos(p);
